@@ -70,8 +70,7 @@ function notifyNoveltellersRoomClosed(roomId) {
   const req = https.request({
 
     // {test 4}
-    hostname: 'localhost',
-    port: 3000,
+    hostname: 'mainserver-eivi.onrender.com',
     path: '/api/room-closed',
     method: 'POST',
     headers: {
@@ -105,8 +104,7 @@ function notifyNoveltellersRoomOpened(roomId) {
   const req = https.request({
 
     // {test 4}
-    hostname: 'localhost',
-    port: 3000,
+    hostname: 'mainserver-eivi.onrender.com',
     path: '/api/room-opened',
     method: 'POST',
     headers: {
@@ -136,8 +134,7 @@ function send_rating(parsed) {
     const postData = JSON.stringify({ token });
 
     const req = https.request({
-      hostname: 'localhost',
-      port: 3000,
+      hostname: 'mainserver-eivi.onrender.com',
       path: '/api/rating',
       method: 'POST',
       headers: {
