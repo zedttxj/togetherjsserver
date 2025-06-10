@@ -25,23 +25,23 @@ var fs = require('fs');
 
 // {test 2}
 const jwt = require('jsonwebtoken');
-const publicKey = fs.readFileSync('hub/public.key');
-const privateKey = fs.readFileSync('hub/room-private.pem');
-// const { runAuthenticatedClient, runAuthenticatedClient2Ways, requestCertificateFromHub } = require('../../roomtest/clientCertRequester');
-// let privateKey, publicKey;
+// const publicKey = fs.readFileSync('hub/public.key');
+// const privateKey = fs.readFileSync('hub/room-private.pem');
+const { runAuthenticatedClient, runAuthenticatedClient2Ways, requestCertificateFromHub } = require('./clientCertRequester');
+let privateKey, publicKey;
 
-// (async () => {
-//   const issued = await requestCertificateFromHub();
-//   const certificate = issued.certificate;
-//   privateKey = issued.privateKey;
-//   const caPublicKey = issued.caPublicKey;
-//   const roomId = issued.roomId;
-//   const result = await runAuthenticatedClient2Ways("ws://localhost:8888/hub", certificate, privateKey, caPublicKey, roomId);
-//   publicKey = result.clientPubKey;
-//   console.log(certificate);
-//   console.log(privateKey);
-//   console.log(publicKey);
-// })();
+(async () => {
+  const issued = await requestCertificateFromHub();
+  const certificate = issued.certificate;
+  privateKey = issued.privateKey;
+  const caPublicKey = issued.caPublicKey;
+  const roomId = issued.roomId;
+  const result = await runAuthenticatedClient2Ways("ws://localhost:8888/hub", certificate, privateKey, caPublicKey, roomId);
+  publicKey = result.clientPubKey;
+  console.log(certificate);
+  console.log(privateKey);
+  console.log(publicKey);
+})();
 
 
 // const nov_publicKey = fs.readFileSync('hub/nov-public.pem');
@@ -54,7 +54,7 @@ function verifyJWT(token) {
 }
 
 // {test 5}
-const https = require('http'); // or use axios or fetch if preferred
+const https = require('https'); // or use axios or fetch if preferred
 
 function notifyNoveltellersRoomClosed(roomId) {
   const token = jwt.sign(
