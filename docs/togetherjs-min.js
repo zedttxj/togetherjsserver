@@ -543,10 +543,10 @@
     return "TogetherJS";
   };
 
-  var defaultHubBase = "https://togetherjs-hub-ixsz.onrender.com/";
+  var defaultHubBase = "https://togetherjsserver.onrender.com";
   if (defaultHubBase == "__" + "hubUrl"+ "__") {
     // Substitution wasn't made
-    defaultHubBase = "https://hub.togetherjs.mozillalabs.com";
+    defaultHubBase = "https://togetherjsserver.onrender.com";
   }
   defaultConfiguration.hubBase = defaultHubBase;
 
