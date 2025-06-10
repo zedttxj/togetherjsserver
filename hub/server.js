@@ -250,9 +250,9 @@ Logger.prototype = {
 
 var logger = new Logger(0, null, true);
 
-var server = http.createServer(function(request, response) {
+var server = https.createServer(function(request, response) {
   var url = parseUrl(request.url, true);
-  var protocol = request.headers["forwarded-proto"] || "http:";
+  var protocol = request.headers["forwarded-proto"] || "https:";
   var host = request.headers.host;
   var base = protocol + "//" + host;
 
