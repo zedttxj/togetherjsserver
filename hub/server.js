@@ -38,9 +38,6 @@ let privateKey, publicKey;
   const roomId = issued.roomId;
   const result = await runAuthenticatedClient2Ways("wss://relay-h2hg.onrender.com/hub", certificate, privateKey, caPublicKey, roomId);
   publicKey = result.clientPubKey;
-  console.log(certificate);
-  console.log(privateKey);
-  console.log(publicKey);
 })();
 
 
