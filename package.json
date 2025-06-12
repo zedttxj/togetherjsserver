@@ -13,7 +13,6 @@
     "websocket": "~1.0.7",
     "websocket-server": "github:miksago/node-websocket-server#master",
     "jsonwebtoken": "^9.0.2",
-    "ws": "^8.18.2",
     "winston": "~0.6.2"
   },
   "engines": {
