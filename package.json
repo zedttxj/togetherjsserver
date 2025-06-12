@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "express": "~3.0.6",
-    "grunt-amd-check": "~0.5.1",
+    "websocket": "~1.0.7",
+    "websocket-server": "github:miksago/node-websocket-server#master",
     "habitat": "~0.4.0",
     "jsonwebtoken": "^9.0.2",
     "node-static": "~0.6.5",
