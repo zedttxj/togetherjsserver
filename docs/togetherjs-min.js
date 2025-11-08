@@ -543,12 +543,12 @@
     return "TogetherJS";
   };
 
-  var defaultHubBase = "https://togetherjsserver.onrender.com";
-  // var defaultHubBase = "https://44.67.129.31:8080";
+  // var defaultHubBase = "https://togetherjsserver.onrender.com";
+  var defaultHubBase = "https://44.67.129.31:8080";
   if (defaultHubBase == "__" + "hubUrl"+ "__") {
     // Substitution wasn't made
-    defaultHubBase = "https://togetherjsserver.onrender.com";
-    // defaultHubBase = "https://44.67.129.31:8080";
+    // defaultHubBase = "https://togetherjsserver.onrender.com";
+    defaultHubBase = "https://44.67.129.31:8080";
   }
   defaultConfiguration.hubBase = defaultHubBase;
 
